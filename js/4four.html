@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+	// 强制类型转换 
+	//1. 将其他类型强制转换为string类型  toString方法
+		var a = 456;
+		console.log(a.toString());//无效 因为没有重新设置变量
+		
+		var a = 456;	//有效 第一种方法将其他类型强制转换为string类型 a.toString()
+		var b = a.toString();
+		console.log(b);
+		console.log(typeof b);
+		
+		var c = 123;	//有效 第二种方法将其他类型强制转换为string类型 String(c)
+		var d = String(c);
+		console.log(d);
+		console.log(typeof d);
+		
+		var r = true;  //有效 将布尔值转换为String
+		var t = r.toString();
+		console.log(t);
+		console.log(typeof t);
+		
+//知识点1 null 和 undefined 无论怎么转换将还是自身
+		
+	//2. 将其他类型强制转换为Number类型  
+		var y = "798";	//有效 将其他类型强制转换为Number类型 Number(y)
+		var u = Number(y); 
+		console.log(u);
+		console.log(typeof u);
+		
+		var y = "avc";	//无效 非数字的情况将转换为NAN
+		var u = Number(y); 
+		console.log(u);
+		console.log(typeof u);
+
+//知识点2 parseInt 会将string中的数字取出来转换为number，遇到非数字将不会往后执行	
+		var i = "789n132px";
+		var o = parseInt(i);
+		console.log(o);
+		console.log(typeof o);
+		
+//知识点3 parseFloat() 会将string中的有效的浮点数取出来转换为number类型	
+		var p = "3.14.58px";
+		var l = parseFloat(p);
+		console.log(l);
+		console.log(typeof l);
+	
+	//3. 将其他类型强制转换为Boolean()类型  
+		var w = "46";		//true
+			w = "app";		//true
+			w = 0;			//false
+			w = NaN;		//false
+			w = undefined;	//false
+			w = "";			//false
+			w = null;		//false
+			q = Boolean(w);
+			console.log(q);
+			console.log(typeof q);
+//知识点4 string字符串拼接
+		var a = 'hello';
+		console.log('class='+a+' 天下'+'吕布'+'无敌 ');
+		
+		var foo =
+			'<ul>'+
+				'<li>'+
+					'<span>span</span>'+
+				'</li>'+
+				'<li>'+
+					'<p>ppp</p>'+
+				'</li>'+
+			'</ul>'
+		;
+		console.log(foo);
+		
+		var a;
+		console.log(typeof typeof a); //两次typeof 结果回事string
+		
+	// 自动类型转换 计算机自己会进行转换	
+		console.log('5' + 3);//53 +法 的时候会先把数字变成字符串后，在进行计算
+		console.log('5' - 3);//2  -法 的时候会先把字符串变成数字后，在进行计算
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

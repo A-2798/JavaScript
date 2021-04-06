@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+	//1. typeof 可以检查数据类型
+			var text =123;
+			var app = '456';
+			console.log(typeof text);
+			console.log(typeof app);
+			
+	//2. 查看js中 数字的最大值 和 数字的最小值
+			console.log(Number.MAX_VALUE);
+			console.log(Number.MIN_VALUE);
+			
+	//3. 数值如果超过数字最大值则是无穷大 Infinity
+			console.log(Number.MAX_VALUE * Number.MAX_VALUE);
+			
+	//4. Infinity 也是Number类型
+			console.log(typeof Infinity)
+			
+	//5. 非数字相乘就是NAN
+			var ap = "avc" * "sdd";
+			console.log(ap);
+			
+	//6. NAN也是Number类型 但要是把NAN加上双引号他就会变成String类型
+			var ap = "avc" * "sdd";
+			console.log(typeof ap);
+			
+			var ap = "NAN";
+			console.log(typeof ap);
+			
+			
+	//7. Boolean 布尔值  true false
+	
+	//8. null 就表示为空对象 typeof 检查null的时候它会显示object	
+			console.log(typeof null);
+			
+	//9. 当声明一个变量,但未给变量赋值,那么他就是undefined。typeof检查undefined还会是undefined
+			var tt;
+			console.log(tt);
+			
+			var ar = undefined;
+			console.log(typeof ar);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
