@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			// 多行else if判断 语句
+			var u = '周三';
+			if(u == '周一'){
+				console.log('上课');
+			}else if(u == '周二'){
+				console.log('放假');
+			}else if(u == '周三'){
+				console.log('旅游');
+			}else{
+				console.log('睡觉');
+			}
+			
+			//switch 判断语句 
+			var s = 50;
+			var l = Math.floor( s / 10 );
+			switch(l){	// 注意:内部进行比较的时候是严格比较 ==== 
+			case 10: 	// 当他等于 10 和 9 的时候他会等于a
+			case 9:
+				console.log('a');
+				break;
+			case 8:
+				console.log('b');
+				break;
+			case 7:
+				console.log('c');
+				break;
+			case 6:
+				console.log('d');
+				break;
+			default:
+				console.log('e');
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
