@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+		// while() 循环语句 ()中需要写 true的逻辑 
+			//输出 1 - 100
+			var a = 1;
+			while(a <= 100){
+				console.log(a);
+				a++;
+			}
+			
+			console.log('-----------------------------');
+			
+			//输出 1 - 100 的偶数
+			var i = 1;
+			while(i <= 100){
+				if(i % 2 == 0){
+					console.log(i);
+				}
+				i++;
+				}
+				
+			console.log('-----------------------------');
+			
+			//输出 1 - 100 偶数的和
+			var o = 1;
+			var rand = 0;
+			while(o <= 100){
+				if(o % 2 == 0){
+					rand += o;
+				}
+			o++;
+				}	
+			console.log(rand);
+			
+		//for() 循环
+			// 求6的阶乘 6! = 6 * 5 * 4 * 3 * 2 * 1
+			var ran = 1;
+			for(var i = 6; i > 0; i--){
+				ran *= i;
+			}
+			console.log(ran); //720
+			
+		//嵌套循环的次数，就是两次嵌套执行的次数相乘的结果
+			for(var g = 0; g < 3; g++){
+				for(var c = 0; c < 4;c++){
+					console.log(123); // 3*4=12 次
+					}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
