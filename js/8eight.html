@@ -48,7 +48,70 @@
 			for(var g = 0; g < 3; g++){
 				for(var c = 0; c < 4;c++){
 					console.log(123); // 3*4=12 次
+					console.log(g); // 0000  1111 2222 
+					console.log(c); // 0123 0123 0123
 					}
+			}
+			
+			// break 表示跳出循环,并且不会往下执行
+			for(var i= 0; i < 5; i++){
+				if( i == 2){
+					break;
+				}
+				document.write(i);	// 01
+			}
+			
+			document.write('</br>');
+			document.write('--------------');
+			document.write('</br>');
+			
+			// continue 表示跳出循环,并且会往下继续执行
+			for(var i= 0; i < 5; i++){
+				if( i == 2){
+					continue;
+				}
+				document.write(i);	//0134
+			}
+			
+			document.write('</br>');
+			document.write('--------------');
+			document.write('</br>');
+			
+			//嵌套循环的时候，break是跳出最近的循环
+			for (var i= 0; i < 5; i++){
+				for(var j= 0; j < 5; j++){
+					if( j == 2){
+						break;
+					}
+					document.write(i,'这是i');	//00 11 22 33 44
+				document.write('</br>');
+					document.write(j,'这是j');	//01 01 01 01 01
+				}
+			}
+			
+			document.write('</br>');
+			document.write('--------------');
+			document.write('</br>');
+			
+			//label语句，可以跳出到指定的位置
+			hello : for (var i= 0; i < 3; i++){
+				for(var j= 0; j < 3; j++){
+					if( j == 2){
+						break hello;
+					}
+					document.write(i,'这是i');	// 0,0
+				document.write('</br>');
+					document.write(j,'这是j');	//0,1
+				}
+			}
+			//循环小案例
+			for( i = 1; i < 8; i++){
+				var str = '';
+				for( j = 1; j < i; j++){
+					str += '*';
+				}
+				document.write('</br>');
+				document.write(str + '\n');
 			}
 		</script>
 	</head>
