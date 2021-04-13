@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+	// 函数声明式 支持 预解析功能
+			var a = 11; 	//全局变量
+			fun();
+			function fun(){
+				console.log(a);
+			}
+			
+	// 函数表达式 支持 直接调用功能
+			
+			var fo = function(){
+				console.log(456);
+			}();
+			
+		// 函数作用域 特点:函数内可以调用到函数外面的定义变量,但是函数外面调用不到函数内定义的变量
+		// 嵌套函数 特点:	函数内可以调用到函数外面的函数,但是函数外面调用不到函数内的函数
+			function bb(){
+				var a = 111; 	// 局部变量
+				console.log(a);
+			}
+			bb();
+			
+			function foo(){
+				var a = 456;
+			}
+			foo();
+			console.log(a); //因为函数外面调用不到函数内定义的变量所以会报错
+			
+			var a;
+			function mm(){
+				 a = 789;
+			}
+			mm();
+			console.log(a); //为了弥补 函数外面调用不到函数内定义的变量所以会报错 我们可以在在外面定义
+			
+	// 作用域链:变量的查找顺序,就近原则从里往外查找,一层层向外查找
+			var p = 5;
+			function fm(){
+				var p =6;
+				console.log(p); //6
+			}
+			fm();
+			console.log(p); //5
+			
+			var a = 4; 	//注意这里的a是一个变量
+			function fk(){
+				a = 3;
+				console.log(a);	//3
+			}
+			fk();
+			console.log(a);	//3
+			
+			
+	// 变量提升
+			var t = 8;
+			console.log(t);
+			var t;
+			t = 8;	//计算机内部会做变量提升
+			console.log(t);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
