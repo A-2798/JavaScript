@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+		// 函数传参
+			function foo(n,m){ 	// 形参
+				if(n>m){
+					var tap =0; 	//临中转遍历方法
+					tap=n;
+					n=m;
+					m=tap;
+				 }
+				var sm = n;
+				var ren = 0;
+				while(sm <= m){
+					ren += sm;
+					sm++;
+				}
+				console.log(ren);
+			}
+			foo(1,100); 	//实参
+			foo(100,1); 	//实参
+			
+		// 随机生成指定的验证码位数
+			function fn(n){
+				var rand = '';
+				for(var i=0;i<n;i++){
+					rand += Math.floor(Math.random() * 10);
+				}
+				console.log(rand);
+			}
+			fn(5);	//五位随机数
+			fn(4);	//四位随机数
+			
+		//arguments表示实参的集合	
+			function fm(){
+				var ran = 0;
+				console.log(arguments.length);
+				console.log(arguments[3]);
+				for(var i=0;i<arguments.length;i++){
+					ran += arguments[i]
+				}
+				console.log(ran);
+			}
+			fm(1,2,3,8,9,4);
+			
+	// 什么是函数的返回值:就是函数调用完变成的结果就是return的值,默认return返回的是undefined
+		//return之后就会跳出并且返回，不会在执行下边的代码了
+			function fl(n){
+				return n + 3;
+			}
+			console.log(fl(3) + 3); //9
+			
+	//03:12:03 案例让个位数前面加上0，双位数保持不变	
+		var h = 3;
+		var m = 12;
+		var s = 3;
+		var time = zero(h) + ':' + zero(m) +':' + zero(s);
+		function zero(num){  //num == zero
+			if(num < 10){
+				return '0' + num;
+			}else{
+				return num;
+			}
+		}
+		console.log(time);
+	//rgb(82,216,64) 小案例随机颜色	
+		var r = numbre();
+		var g = numbre();
+		var b = numbre();
+		function numbre(){
+			return Math.floor(Math.random() * 256);
+		}
+		console.log('rgb('+r+ ',' +g+ ',' +b+ ')')
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
