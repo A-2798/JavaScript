@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#elem2 {
+				width: 120px;
+				height: 200px;
+				background: #55aa00;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="elem1" style="width: 120px;height: 200px;background: #ff557f;">内部引用</div>
+		<div id="elem2" style="width: 66px;">外部引用</div>	
+		
+		<div> -------------------------------- </div>
+		
+		<ol>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ol>	
+		
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+		<script type="text/javascript">
+	//	获取样式
+		var elem1 = document.getElementById('elem1');
+		console.log(elem1.style.width);
+		
+	//getComputedStyle外部引用的时候要用最终样式的写法来获取样式
+		//注意： !important 高于最终样式 getComputedStyle
+		var elem2 = document.getElementById('elem2');
+		console.log(getComputedStyle(elem2).width );
+		
+		console.log('--------------------------');
+	
+	//小案例奇数变红色，偶数变蓝色
+		var lis = document.querySelectorAll('ol li');
+		for(var i=0;i<lis.length;i++){
+			if(i%2==0){
+				lis[i].style.background='red';
+			}else{
+				lis[i].style.background='blue';
+			}
+		}
+		
+		console.log('--------------------------');
+	
+	//小案例 奇偶数随机变色
+		var ul = document.querySelectorAll('ul li');
+		for(var i=0; i<ul.length;i++){
+			ul[i].style.background = 'rgb('+ foo() +','+ foo() +','+ foo() +')';
+		}
+		function foo(){
+			return Math.floor( Math.random() * 256);
+		}
+		</script>
+	</body>
+</html>

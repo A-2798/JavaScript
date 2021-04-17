@@ -3,7 +3,83 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+	
 	</head>
 	<body>
-	</body>
+		<div id="elem" title="word" class="box">111</div>
+		<div class="hello" title="kk">222</div>
+		<div class="hello" title="kl">232</div>
+		<div class="hello" title="kp">242</div>
+		<div title="lr">333</div>
+		<div>--------------2------------------</div>
+		<ul id="ul">
+			<li>71</li>
+			<li>12</li>
+			<li>13</li>
+			<li>14</li>
+		</ul>
+		
+		<p>123</p>
+		<p>128</p>
+		<p>129</p>
+		<div>----------------3----------------</div>
+		<div id="lem" title="wrd" class="box">222</div>
+		<p> <span>333</span> </p>
+		<div>----------------4----------------</div>
+		<ol id="lo">
+			<li>11</li>
+			<li>17</li>
+			<li>18</li>
+		</ol>
+		
+		
+		<script type="text/javascript">
+			// 操作HTML元素
+				// document 文档对象 ：包含整个页面
+		//针对id操作页面
+			var divelem = document.getElementById('elem');
+			console.log(divelem.id);
+			console.log(divelem.className);//js中class是关键字，class用className代替
+			
+			// 更改html的id 和 title 节点 在控制台看
+			divelem.id = 'hehe';
+			divelem.title = 'ken';
+			
+		//针对class操作页面
+			var vals = document.getElementsByClassName('hello');
+			console.log(vals[2].title);
+			
+		//针对所有的document下的标签操作页面 （也就是整个页面下的标签）
+			var DIV = document.getElementsByTagName('div');
+			console.log(DIV.length);
+			
+			console.log('-------------2-----------------------');
+		
+		//	getElementsByTagName不一定前面都是document
+			var ul = document.getElementById('ul');
+			console.log(ul.id);	//ul
+			var lis = ul.getElementsByTagName('li');
+			console.log(lis.length);	//4
+		
+			var p = document.getElementsByTagName('p')[2];
+			console.log(p); //<p>129</p>
+			
+			console.log('-----------------3-------------------');
+			
+			var elem = document.querySelector('#lem'); //通过id获取元素
+			var elem = document.querySelector('.box'); //通过class获取元素
+			var elem = document.querySelector('div'); //通过div标签获取元素
+			var span = document.querySelector('p span').style.backgroundColor='red'; //获取p标签里边的span写法
+		
+		console.log('-----------------4-------------------');
+		
+	//querySelector 和 	querySelectorAll
+		var ly = document.getElementById('lo');
+		
+			var kp = ly.querySelector('li');
+			console.log(kp) //kp就是ol下的第一个li
+			var kp = ly.querySelectorAll('li');
+			console.log(kp) //kp就是ol下的所有li集合
+		</script>
+	</body> 
 </html>
