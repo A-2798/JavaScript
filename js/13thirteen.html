@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="elem">鼠标点击事件</div>	<!-- onclick 鼠标点击事件 -->
+		<div id="elem1">鼠标按下事件 鼠标抬起事件</div>	<!-- onmousedown鼠标按下事件 onmouseup鼠标抬起事件 -->
+		<div id="elem2">鼠标移入移出事件</div>	<!-- onmouseover onmouseout 鼠标移入移出事件 -->
+		<div id="elem3">鼠标移动事件</div>	<!-- onmousemove 鼠标移动事件 -->
+		
+		<!-- 小案例 -->
+		全选：<input id="elem4" type="checkbox" />
+			<hr>
+			<input class="elem5" type="checkbox" />
+			<input class="elem5" type="checkbox" />
+			<input class="elem5" type="checkbox" />
+			<input class="elem5" type="checkbox" />
+		
+		<script type="text/javascript">
+			
+			var elem = document.getElementById('elem');
+			elem.onclick = function(){
+				alert('456');
+				}
+				
+		console.log('-------------------------------');	
+		
+			var elem1 = document.getElementById('elem1');
+			elem1.onmousedown = function(){ 
+				console.log('鼠标按下');
+				}
+				
+			var elem1 = document.getElementById('elem1');
+			elem1.onmouseup = function(){ 
+				console.log('鼠标抬起');
+				}
+		
+		console.log('-------------------------------');	
+			
+			var elem2 = document.getElementById('elem2');
+			elem2.onmouseover = function(){ 
+				console.log('鼠标移入');
+				}	
+			elem2.onmouseout = function(){
+				console.log('鼠标移入移出');
+				}
+		
+		console.log('-------------------------------');	
+		
+		var elem3 = document.getElementById('elem3');
+		elem3.onmousemove = function(){ 
+			console.log('鼠标移动事件');
+			}	
+		
+		console.log('-----------小案例--------------------');	
+		
+		var elem4 = document.getElementById('elem4');
+		var elem5 = document.getElementsByClassName('elem5');
+		var on = true;
+		elem4.onclick = function(){
+			if(on){
+				for(var i=0;i<elem5.length;i++){
+					elem5[i].checked = true; 	//checked = true 表示全选
+				}
+			}else{
+				for(var i=0;i<elem5.length;i++){
+					elem5[i].checked = false;  //checked = true 表示全不选
+				}
+			}
+				on = !on;
+			};
+		
+	
+		</script>
+	</body>
+</html>

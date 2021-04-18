@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 小案例 -->
+		<br >
+		单价：<input type="text" name="" id="" value="" /><br >
+		个数：<input type="text" name="" id="" value="" /><br >
+		<button type="button">提交</button> 元：<span></span>
+			
+		<script type="text/javascript">
+			
+			var inputs = document.querySelectorAll('input');
+			var btn = document.querySelector('button');
+			var spn = document.querySelector('span');
+			
+			btn.onclick = function(){
+				var pir = inputs[0].value;
+				var number = inputs[1].value;
+				
+				if(!Number(pir) || !Number(number) ){
+					 alert('请输入数字');
+					 return;
+					}
+				spn.innerHTML = pir * number;
+			}
+		</script>
+	</body>
+</html>
