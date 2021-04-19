@@ -59,9 +59,9 @@
 		
 		var elem4 = document.getElementById('elem4');
 		var elem5 = document.getElementsByClassName('elem5');
-		var on = true;
+		
 		elem4.onclick = function(){
-			if(on){
+			if(this.checked){	//this指向
 				for(var i=0;i<elem5.length;i++){
 					elem5[i].checked = true; 	//checked = true 表示全选
 				}
@@ -70,7 +70,6 @@
 					elem5[i].checked = false;  //checked = true 表示全不选
 				}
 			}
-				on = !on;
 			};
 		
 	

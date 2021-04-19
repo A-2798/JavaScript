@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+			<html>
+				<head>
+					<meta charset="utf-8">
+					<title></title>
+				</head>
+				<body>
+				
+		<!-- 小案例点击进行下一个 -->
+				<button type="button">下一个</button>
+					<ol>
+						<li>11</li>
+						<li>12</li>
+						<li>13</li>
+						<li>14</li>
+						<li>15</li>
+					</ol>
+					<script type="text/javascript">
+						var button = document.querySelector('button');
+						var lis = document.querySelectorAll('ol li');
+						var num = -1; //-1表示从0开始
+						
+						button.onmousedown = function(){
+							for(var i=0;i<lis.length;i++){ //把所有li背景色都变为空
+								lis[i].style.background='';
+							}
+							if(num == lis.length -1){ //红色框到最后一个li返回到最前面
+								num = -1; 
+							}
+							num++;
+							lis[num].style.background='red'; //把所有li背景色都变为空，只留一个li变色
+						}
+					</script>
+				</body>
+			</html>
