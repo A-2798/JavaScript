@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.rap-title .active{background: #55AA00;}
+			.rap-content div{display: none;}
+			.rap-content .show{display: block;}
+		</style>
+	</head>
+	<body>
+		<div id="rap">
+			<div class="rap-title">
+				<button class="active">广告</button>
+				<button>切换</button>
+				<button>拍照</button>
+			</div>
+			
+			<div class="rap-content">
+				<div class="show">12</div>
+				<div class="">15</div>
+				<div class="">16</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var buttons = document.querySelectorAll(' .rap-title button');
+			var divs = document.querySelectorAll(' .rap-content div');
+			
+			for(var i=0;i<buttons.length;i++){
+				buttons[i].index = i;
+				
+				buttons[i].onmouseover = function(){
+					for(var i=0;i<buttons.length;i++){
+						buttons[i].className = '';
+						divs[i].className = '';
+					}
+					this.className = 'active';
+					divs[this.index].className = 'show';
+				}
+				
+			}
+		</script>
+	</body>
+</html>

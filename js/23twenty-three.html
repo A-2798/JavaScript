@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>函数封装复用</title>
+		<style type="text/css">
+			#tab1{margin: 50px;}
+			#tab1 .elem-one .but{background: #55AA00;}
+			#tab1 .elem-two .show{display: block;}
+			#tab1 .elem-two div{display: none;}
+		    
+			#tab2{margin: 50px;}
+			#tab2 .elem-one .but{background: #55AA00;}
+			#tab2 .elem-two .show{display: block;}
+			#tab2 .elem-two div{display: none;}
+			
+			#tab3{margin: 50px;}
+			#tab3 .elem-one .but{background: #55AA00;}
+			#tab3 .elem-two .show{display: block;}
+			#tab3 .elem-two div{display: none;}
+			
+		</style>
+	</head>
+	<body>
+		<div id="tab1">
+			
+				<div class="elem-one">
+					<button class="but">选项1</button>
+					<button>选项1</button>
+					<button>选项1</button>
+				</div>
+				<div class="elem-two">
+					<div class="show">111</div>
+					<div>222</div>
+					<div>333</div>
+				</div>
+			
+		</div>
+		
+		<div id="tab2">
+			
+				<div class="elem-one">
+					<button class="but">选项1</button>
+					<button>选项1</button>
+					<button>选项1</button>
+				</div>
+				<div class="elem-two">
+					<div class="show">111</div>
+					<div>222</div>
+					<div>333</div>
+				</div>
+			
+		</div>
+		
+		<div id="tab3">
+			
+				<div class="elem-one">
+					<button class="but">选项1</button>
+					<button>选项1</button>
+					<button>选项1</button>
+				</div>
+				<div class="elem-two">
+					<div class="show">111</div>
+					<div>222</div>
+					<div>333</div>
+				</div>
+			
+		</div>
+		
+		
+		<script type="text/javascript">
+			
+			
+			function foo(id){
+				var parent = document.getElementById(id); 	//	id是和foo中的id相互呼应
+				var buttons = parent.querySelectorAll(' .elem-one button');
+				var divs = parent.querySelectorAll(' .elem-two div');
+				
+				
+				for(var i=0;i<buttons.length;i++){
+					buttons[i].index = i;
+					buttons[i].onmouseover = function(){
+						for(var i=0;i<buttons.length;i++){
+							buttons[i].className = '';
+							divs[i].className = '';
+						}
+						this.className = 'but';
+						divs[this.index].className = 'show';
+					}
+				}
+			}
+			foo('tab1');
+			foo('tab2');
+			foo('tab3');
+		</script>
+	</body>
+</html>

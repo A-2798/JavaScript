@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小案例 星级评分</title>
+    <style>
+        *{ margin:0; padding:0;}
+        ul{ list-style: none; overflow: hidden;}
+        li{ float: left; width:30px; height:30px; background:url('https://img3.doubanio.com/f/shire/2520c01967207a1735171056ec588c8c1257e5f8/pics/rating_icons/star_hollow_hover.png'); background-size:cover;}
+        div{ margin:30px;}
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        var lis = document.querySelectorAll('li');
+		
+		for(var i=0;i<lis.length;i++){
+			
+		  lis[i].index = i;
+			lis[i].onmouseover = function(){
+				for(var i=0;i<lis.length;i++){
+					if(this.index >= i){
+						lis[i].style.backgroundImage = "url('https://img3.doubanio.com/f/shire/5a2327c04c0c231bced131ddf3f4467eb80c1c86/pics/rating_icons/star_onmouseover.png')";
+					}
+				}
+			};
+			lis[i].onmouseout = function(){
+				for(var i=0;i<lis.length;i++){
+					if(this.index >= i){
+                    lis[i].style.backgroundImage = "url('https://img3.doubanio.com/f/shire/2520c01967207a1735171056ec588c8c1257e5f8/pics/rating_icons/star_hollow_hover.png')";
+					}
+				}
+			};
+			
+		}
+    </script>
+</body>
+</html>

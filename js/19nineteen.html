@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script type="text/javascript">
+			var lis = document.querySelectorAll('li');
+			for(var i=0;i<lis.length;i++){
+				if(i%2 == 0){
+					lis[i].style.background = 'red';
+					lis[i].myColor = 'red';	//myColor标签上看不见这个属性但是js是有的 my后面第一个字母要大写
+				}else{
+					lis[i].style.background = 'blue';
+					lis[i].myColor = 'blue';
+				}
+			}
+			for(var i=0;i<lis.length;i++){
+				lis[i].onmouseover = function(){
+					this.style.background = 'yellow';
+				}
+				lis[i].onmouseout = function(){
+					this.style.background = this.myColor;
+				}
+			}
+		</script>
+	</body>
+</html>

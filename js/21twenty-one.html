@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>折叠小练习</title>
+	</head>
+	<h3>家人 <span>↓</span> </h3>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<h3>商人 <span>↓</span> </h3>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<h3>穷人 <span>↓</span> </h3>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	
+	<body>
+		<script type="text/javascript">
+			var h3s = document.querySelectorAll('h3');
+			var uls = document.querySelectorAll('ul');
+			var spans = document.querySelectorAll('span');
+			
+			for(var i=0; i<h3s.length;i++){
+				 h3s[i].index = i;
+				 h3s[i].off = true;
+				h3s[i].onclick = function(){
+					// uls[this.index].style.display='none';
+					if(this.off){
+						uls[this.index].style.display= 'none';
+						spans[this.index].innerHTML= '→';
+					}else{
+						uls[this.index].style.display= 'block';
+						spans[this.index].innerHTML= '↓';
+					}
+					this.off = !this.off;
+				}
+			}
+			
+		</script>
+	</body>
+</html>
