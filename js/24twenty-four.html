@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>for in 循环只能用在对象身上</title>
+	</head>
+	<body>
+		<div id="elem">
+			
+		</div>
+		
+		<button type="button">停止爆炸</button>
+		<script type="text/javascript">
+			var myid = {
+				width:'200px',
+				height:'200px',
+				background:'red'
+			}
+			var elem = document.querySelector('#elem');
+			for(var atter in myid){
+				elem.style[atter] = myid[atter]
+			}
+			
+			
+		//setTimeout()定时器
+			setTimeout(function(){
+				console.log('我是同步定时器');
+			},2000);
+			
+		//连续定时器	
+			var now = 0;
+			setInterval(function(){
+				now++;
+			console.log('我是连续定时器，特点就是每隔一段时间触发一次',now);
+			},2000);
+			
+		//小案例清除连续定时器	
+			var btn = document.querySelector('button');
+			btn.onclick = function(){
+				clearInterval(time)
+			}
+			var time = setInterval(function(){
+				console.log('爆炸');
+			},2000)
+		</script>
+	</body>
+</html>
